@@ -1,0 +1,390 @@
+
+
+
+/** =========================  */ 
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+  row-gap: 30px;
+  flex-wrap: wrap;
+
+  min-height: 100vh;
+
+  background-color: rgb(46, 39, 39);
+
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+
+
+}
+
+
+
+
+.border-animation-1{
+  --speed: 5s;
+  --border: 6px;
+  --border-color: rgb(174, 228, 67);
+  --border-radius: 10px;
+  --width: 300px;
+  --height: 400px;
+
+  width: var(--width);
+  height: var(--height);
+
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  
+  border-radius: var(--border-radius);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+
+  &::after{
+    content: '';
+    position: absolute;
+
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, var(--border-color));
+
+    animation: animate var(--speed) linear infinite;
+    animation-delay: calc((var(--speed) / 2) * -1);
+  }
+  &::before{
+    content: '';
+    position: absolute;
+
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, var(--border-color));
+
+    animation: animate var(--speed) linear infinite;
+  }
+
+  @keyframes animate {
+
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+    
+  }
+
+
+  /**==============*/
+
+  .content{
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+
+    width: calc(var(--width) - var(--border));
+    height: calc(var(--height) - var(--border));
+    border-radius: calc(var(--border-radius) - 2px);
+
+    background: rgb(87, 84, 84);
+
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    row-gap: 30px;
+    align-items: center;
+    justify-content: center;
+
+    span{
+      font-size: 14px;
+      text-align: center;
+      line-height: 20px;
+    }
+  }
+}
+
+/*! ======================== */
+
+
+.border-animation-2{
+  --speed: 3s;
+  --border: 6px;
+  --border-color-1: rgb(174, 228, 67);
+  --border-color-2: rgb(45, 242, 238);
+  --border-radius: 10px;
+  --width: 300px;
+  --height: 400px;
+
+  width: var(--width);
+  height: var(--height);
+
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  
+  border-radius: var(--border-radius);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+
+  &::after{
+    content: '';
+    position: absolute;
+
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, var(--border-color-1));
+
+    animation: animate var(--speed) linear infinite;
+    animation-delay: calc((var(--speed) / 2) * -1);
+  }
+  &::before{
+    content: '';
+    position: absolute;
+
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, var(--border-color-2));
+
+    animation: animate var(--speed) linear infinite;
+  }
+
+  @keyframes animate {
+
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+    
+  }
+
+
+  /**==============*/
+
+  .content{
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+
+    width: calc(var(--width) - var(--border));
+    height: calc(var(--height) - var(--border));
+    border-radius: calc(var(--border-radius) - 2px);
+
+    background: rgb(87, 84, 84);
+
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    row-gap: 30px;
+    align-items: center;
+    justify-content: center;
+
+    span{
+      font-size: 14px;
+      text-align: center;
+      line-height: 20px;
+    }
+  }
+}
+
+
+/*! ======================== */
+
+
+.border-animation-3{
+  --speed: 3s;
+  --border: 6px;
+  --border-radius: 10px;
+  --width: 300px;
+  --height: 400px;
+
+  width: var(--width);
+  height: var(--height);
+
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  
+  border-radius: var(--border-radius);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+
+  &::after{
+    content: '';
+    position: absolute;
+
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+
+    
+
+    animation: rotation var(--speed) linear infinite, change-color var(--speed) linear infinite;
+    animation-delay: calc((var(--speed) / 2) * -1);
+  }
+  &::before{
+    content: '';
+    position: absolute;
+
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+
+    
+    
+    animation: rotation var(--speed) linear infinite, change-color var(--speed) linear infinite;
+  }
+
+  @keyframes rotation {
+
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+    
+  }
+  @keyframes change-color {
+
+   0%{
+      background-image: conic-gradient(transparent, transparent, transparent, transparent, #ff0000);
+     }
+   4%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #ff4000);
+   }
+   8%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #ff8000);
+   }
+   12%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #ffbf00);
+   }
+   16%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #ffff00);
+   }
+   20%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #bfff00);
+   }
+   24%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #80ff00);
+   }
+   28%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #40ff00);
+   }
+   32%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #00ff00);
+   }
+   36%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #00ff40);
+   }
+   40%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #00ff80);
+   }
+   44%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #00ffbf);
+   }
+   48%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #00ffff);
+   }
+   52%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #00bfff);
+   }
+   56%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #0080ff);
+   }
+   60%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #0040ff);
+   }
+   64%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #0000ff);
+   }
+   68%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #0000ff);
+   }
+   72%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #4000ff);
+   }
+   76%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #8000ff);
+   }
+   80%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #bf00ff);
+   }
+   84%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #ff00ff);
+   }
+   88%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #ff00bf);
+   }
+   92%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #ff0080);
+   }
+   96%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #ff0040);
+   }
+   100%{
+    background-image: conic-gradient(transparent, transparent, transparent, transparent, #ff0000);
+   }
+       
+  }
+
+
+  /**==============*/
+
+  .content{
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+
+    width: calc(var(--width) - var(--border));
+    height: calc(var(--height) - var(--border));
+    border-radius: calc(var(--border-radius) - 2px);
+
+    background: rgb(87, 84, 84);
+
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    row-gap: 30px;
+    align-items: center;
+    justify-content: center;
+
+    span{
+      font-size: 14px;
+      text-align: center;
+      line-height: 20px;
+    }
+  }
+}
